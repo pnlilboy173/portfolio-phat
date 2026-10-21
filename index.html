@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#FFFFFF">
+	<title>Nguyễn Tấn Phát | AI Content Creator</title>
+	<meta name="description" content="Portfolio của Nguyễn Tấn Phát – AI Content Creator: video ngắn, blog SEO, fanpage và tự động hóa bằng AI Agent.">
+	<meta property="og:title" content="Nguyễn Tấn Phát | AI Content Creator">
+	<meta property="og:type" content="website">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--cobalt: #2F5BB7;
+			--white: #FFFFFF;
+			--soft-blue: #EEF3FC;
+			--ink: #111111;
+			--muted: #626B7A;
+			--serif: "Playfair Display", Georgia, serif;
+			--sans: "Be Vietnam Pro", Arial, sans-serif;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-padding-top: 112px;
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--white);
+			font-family: var(--sans);
+			font-size: 16px;
+			line-height: 1.6;
+		}
+
+		.site-header {
+			position: fixed;
+			z-index: 10;
+			inset: 0 0 auto;
+			border-bottom: 1px solid #E5EAF2;
+			background: var(--white);
+		}
+
+		.header-inner {
+			width: min(1120px, calc(100% - 64px));
+			min-height: 76px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 32px;
+		}
+
+		.logo {
+			display: inline-flex;
+			flex: 0 0 auto;
+			align-items: baseline;
+			color: var(--ink);
+			font-family: var(--serif);
+			font-size: 34px;
+			font-weight: 700;
+			line-height: 1;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.logo-port {
+			color: var(--ink);
+			font-style: normal;
+		}
+
+		.logo-folio {
+			color: var(--cobalt);
+			font-style: italic;
+		}
+
+		.logo-i {
+			display: inline-block;
+			position: relative;
+		}
+
+		.logo-star {
+			position: absolute;
+			top: calc(-0.22em + 2px);
+			left: calc(50% + 0.25em + 2px);
+			right: auto;
+			transform: translateX(-50%);
+			color: var(--ink);
+			font-family: var(--sans);
+			font-size: 0.35em;
+			font-style: normal;
+			line-height: 1;
+		}
+
+		.logo-byline {
+			margin-left: 7px;
+			color: var(--cobalt);
+			font-style: italic;
+		}
+
+		.logo {
+			position: relative;
+		}
+
+		.logo-star {
+			animation: logo-twinkle 8s ease-in-out infinite;
+		}
+
+		.logo::after {
+			content: "";
+			position: absolute;
+			top: -6px;
+			right: 0;
+			bottom: -6px;
+			left: 0;
+			pointer-events: none;
+			background: linear-gradient(100deg, transparent 40%, rgba(255, 255, 255, 0.9) 50%, transparent 60%) 130% 0 / 250% 100%;
+			animation: logo-shine 8s ease-in-out infinite;
+		}
+
+		@keyframes logo-twinkle {
+			0%, 14%, 34%, 100% {
+				transform: translateX(-50%) scale(1) rotate(0deg);
+				color: var(--ink);
+			}
+
+			22% {
+				transform: translateX(-50%) scale(2) rotate(90deg);
+				color: var(--cobalt);
+			}
+
+			28% {
+				transform: translateX(-50%) scale(1.25) rotate(180deg);
+				color: var(--cobalt);
+			}
+		}
+
+		@keyframes logo-shine {
+			0%, 54% {
+				background-position: 130% 0;
+			}
+
+			66%, 100% {
+				background-position: -60% 0;
+			}
+		}
+
+		.main-nav {
+			display: flex;
+			align-items: center;
+			gap: clamp(16px, 2.5vw, 32px);
+		}
+
+		.main-nav a {
+			color: var(--ink);
+			font-size: 14px;
+			font-weight: 500;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.main-nav a:hover,
+		.main-nav a:focus-visible {
+			color: var(--cobalt);
+		}
+
+		.main-nav a[href="#lien-he"] {
+			padding: 8px 16px;
+			background: var(--cobalt);
+			color: var(--white);
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.main-nav a[href="#lien-he"]:hover,
+		.main-nav a[href="#lien-he"]:focus-visible {
+			filter: brightness(0.9);
+		}
+
+		.main-nav a[href="#lien-he"]:focus-visible {
+			outline: 2px solid var(--ink);
+			outline-offset: 2px;
+		}
+
+		.main-nav a {
+			position: relative;
+		}
+
+		.main-nav a.is-current:not([href="#lien-he"])::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: -6px;
+			left: 0;
+			height: 2px;
+			background: var(--cobalt);
+		}
+
+		.main-nav a[href="#lien-he"].is-current {
+			box-shadow: inset 0 0 0 2px var(--white);
+		}
+
+		main {
+			padding-top: 76px;
+		}
+
+		.portfolio-section {
+			min-height: 350px;
+			padding: 88px max(32px, calc((100% - 1120px) / 2));
+			scroll-margin-top: 76px;
+		}
+
+		.hero-section {
+			display: grid;
+			grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+			grid-template-areas:
+				"eyebrow portrait"
+				"name portrait"
+				"role portrait"
+				"intro portrait"
+				"metrics portrait"
+				"action portrait";
+			align-content: center;
+			align-items: start;
+			column-gap: clamp(40px, 7vw, 96px);
+			row-gap: 12px;
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		.hero-eyebrow {
+			grid-area: eyebrow;
+			margin: 0;
+			color: var(--cobalt);
+			font-family: var(--serif);
+			font-size: 20px;
+			font-weight: 600;
+			font-variant-numeric: lining-nums;
+			font-feature-settings: "lnum" 1;
+		}
+
+		.hero-name {
+			grid-area: name;
+			font-family: var(--sans);
+			font-size: 38px;
+			font-weight: 600;
+			line-height: 1.15;
+			color: var(--ink);
+		}
+
+		.hero-role {
+			grid-area: role;
+			display: grid;
+			color: var(--ink);
+			font-family: var(--serif);
+			margin: 0;
+			font-size: 26px;
+			font-weight: 600;
+		}
+
+		.hero-role-item {
+			grid-area: 1 / 1;
+			animation: hero-role-cycle 9s ease-in-out infinite both;
+		}
+
+		.hero-role-item:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.hero-role-item:nth-child(2) {
+			animation-delay: 3s;
+		}
+
+		.hero-role-item:nth-child(3) {
+			animation-delay: 6s;
+		}
+
+		@keyframes hero-role-cycle {
+			0% {
+				opacity: 0;
+				transform: translateY(8px);
+			}
+
+			4% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			29% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			33.333% {
+				opacity: 0;
+				transform: translateY(-8px);
+			}
+
+			100% {
+				opacity: 0;
+				transform: translateY(-8px);
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.hero-role-item {
+				animation: none;
+			}
+
+			.hero-role-item:not(:first-child) {
+				display: none;
+			}
+		}
+
+		@keyframes hero-reveal {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.hero-section .hero-eyebrow,
+		.hero-section .hero-name,
+		.hero-section .hero-role,
+		.hero-section .hero-action,
+		.hero-section .hero-intro,
+		.hero-section .hero-metrics,
+		.hero-section .hero-portrait {
+			animation: hero-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+		}
+
+		.hero-section .hero-eyebrow {
+			animation-delay: 0ms;
+		}
+
+		.hero-section .hero-name {
+			animation-delay: 120ms;
+		}
+
+		.hero-section .hero-role {
+			animation-delay: 240ms;
+		}
+
+		.hero-section .hero-portrait {
+			animation-delay: 300ms;
+		}
+
+		.hero-section .hero-action {
+			animation-delay: 720ms;
+		}
+
+		.hero-section .hero-intro {
+			animation-delay: 480ms;
+		}
+
+		.hero-section .hero-metrics {
+			animation-delay: 600ms;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.hero-section .hero-eyebrow,
+			.hero-section .hero-name,
+			.hero-section .hero-role,
+			.hero-section .hero-action,
+			.hero-section .hero-intro,
+			.hero-section .hero-metrics,
+			.hero-section .hero-portrait {
+				animation: none;
+			}
+		}
+
+		.hero-action {
+			grid-area: action;
+			display: inline-flex;
+			width: fit-content;
+			justify-self: start;
+			min-height: 44px;
+			align-items: center;
+			justify-content: center;
+			margin-top: 12px;
+			padding: 10px 22px;
+			background: var(--cobalt);
+			color: var(--white);
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.hero-intro {
+			grid-area: intro;
+			margin: 4px 0 0;
+			color: var(--muted);
+		}
+
+		.hero-metrics {
+			grid-area: metrics;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 12px;
+			margin-top: 8px;
+		}
+
+		.hero-stat {
+			min-width: 0;
+			padding: 14px;
+			background: var(--soft-blue);
+			color: var(--ink);
+			text-decoration: none;
+		}
+
+		.hero-stat-value,
+		.hero-stat-label {
+			display: block;
+		}
+
+		.hero-stat-value {
+			color: var(--cobalt);
+			font-size: 25px;
+			font-weight: 600;
+			line-height: 1.25;
+		}
+
+		.hero-stat-label {
+			margin-top: 5px;
+			font-size: 13px;
+			line-height: 1.45;
+		}
+
+		.hero-stat-link:hover .hero-stat-label,
+		.hero-stat-link:focus-visible .hero-stat-label {
+			text-decoration: underline;
+		}
+
+		.hero-portrait {
+			grid-area: portrait;
+			position: relative;
+			display: block;
+			width: 100%;
+			max-width: 560px;
+			aspect-ratio: 1146 / 912;
+			justify-self: end;
+			align-self: center;
+			margin: 0;
+		}
+
+		.hero-section .portrait-base {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.hero-section .ann {
+			position: absolute;
+			height: auto;
+			pointer-events: none;
+			user-select: none;
+		}
+
+		.hero-section .ann-callme {
+			left: 18.761%;
+			top: 10.088%;
+			width: 16.754%;
+		}
+
+		.hero-section .ann-arrow-callme {
+			left: 28.098%;
+			top: 27.193%;
+			width: 7.33%;
+		}
+
+		.hero-section .ann-content {
+			left: 74.782%;
+			top: 27.741%;
+			width: 18.237%;
+		}
+
+		.hero-section .ann-arrow-content {
+			left: 71.64%;
+			top: 42.763%;
+			width: 6.108%;
+		}
+
+		.hero-section .ann-year {
+			left: 14.485%;
+			top: 50.439%;
+			width: 14.049%;
+		}
+
+		.hero-section .ann-arrow-year {
+			left: 29.843%;
+			top: 51.754%;
+			width: 8.901%;
+		}
+
+		@keyframes wipe-x {
+			from {
+				clip-path: inset(0 100% 0 0);
+			}
+
+			to {
+				clip-path: inset(0 0 0 0);
+			}
+		}
+
+		@keyframes wipe-diag {
+			from {
+				-webkit-mask-position: var(--from);
+				mask-position: var(--from);
+			}
+
+			to {
+				-webkit-mask-position: var(--to);
+				mask-position: var(--to);
+			}
+		}
+
+		.hero-section .ann:not(.arrow) {
+			animation: wipe-x 0.9s cubic-bezier(.65, 0, .35, 1) both;
+			animation-delay: var(--d);
+		}
+
+		.hero-section .ann.arrow {
+			-webkit-mask-image: linear-gradient(var(--dir), #000 40%, transparent 60%);
+			mask-image: linear-gradient(var(--dir), #000 40%, transparent 60%);
+			-webkit-mask-size: 300% 300%;
+			mask-size: 300% 300%;
+			animation: wipe-diag 0.7s ease-out both;
+			animation-delay: var(--d);
+		}
+
+		.hero-section .ann-callme {
+			--d: 1s;
+		}
+
+		.hero-section .ann-arrow-callme {
+			--d: 1.7s;
+			--dir: to bottom right;
+			--from: 100% 100%;
+			--to: 0% 0%;
+		}
+
+		.hero-section .ann-content {
+			--d: 2.1s;
+		}
+
+		.hero-section .ann-arrow-content {
+			--d: 2.8s;
+			--dir: to bottom left;
+			--from: 0% 100%;
+			--to: 100% 0%;
+		}
+
+		.hero-section .ann-year {
+			--d: 3.2s;
+		}
+
+		.hero-section .ann-arrow-year {
+			--d: 3.9s;
+			--dir: to top right;
+			--from: 100% 0%;
+			--to: 0% 100%;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.hero-section .ann:not(.arrow),
+			.hero-section .ann.arrow {
+				animation: none;
+				clip-path: none;
+				-webkit-mask-image: none;
+				mask-image: none;
+			}
+		}
+
+		.hero-section > :not(.hero-portrait) {
+			position: relative;
+			z-index: 1;
+		}
+
+		@media (min-width: 1101px) {
+			.hero-section {
+				--portrait-w: min(660px, 46vw);
+				--portrait-bleed: clamp(0px, (100vw - 1200px) / 2, 60px);
+				grid-template-columns: minmax(0, 1fr) calc(var(--portrait-w) - var(--portrait-bleed));
+			}
+
+			.hero-portrait {
+				width: var(--portrait-w);
+				max-width: none;
+				margin-right: calc(-1 * var(--portrait-bleed));
+			}
+		}
+
+		@media (max-width: 1100px) {
+			.hero-section .ann {
+				display: none;
+			}
+		}
+
+		.portfolio-section:nth-child(even) {
+			background: var(--soft-blue);
+		}
+
+		h1,
+		h2 {
+			margin: 0;
+			color: var(--cobalt);
+			font-family: var(--serif);
+			font-weight: 600;
+			font-variant-numeric: lining-nums;
+			font-feature-settings: "lnum" 1;
+		}
+
+		h2 {
+			font-size: 34px;
+		}
+
+		#kinh-nghiem {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-areas:
+				"title title"
+				"role role"
+				"meta meta"
+				"summary summary"
+				"cadence-title responsibilities-title"
+				"cadence responsibilities"
+				"software software"
+				"education education";
+			column-gap: 32px;
+		}
+
+		#kinh-nghiem > h2 {
+			grid-area: title;
+		}
+
+		#kinh-nghiem > h3 {
+			grid-area: role;
+			margin: 0 0 8px;
+			color: var(--ink);
+			font-family: var(--sans);
+			font-size: 22px;
+			font-weight: 600;
+		}
+
+		#kinh-nghiem .experience-meta {
+			margin: 0 0 8px;
+			color: var(--muted);
+			font-size: 16px;
+		}
+
+		#kinh-nghiem > .experience-meta {
+			grid-area: meta;
+		}
+
+		#kinh-nghiem .experience-summary {
+			font-size: 16px;
+		}
+
+		#kinh-nghiem > .experience-summary {
+			grid-area: summary;
+			margin: 0 0 24px;
+		}
+
+		#kinh-nghiem .experience-education {
+			grid-area: education;
+		}
+
+		#kinh-nghiem .experience-software {
+			grid-area: software;
+			min-width: 0;
+		}
+
+		#kinh-nghiem .experience-software-icons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-bottom: 12px;
+		}
+
+		#kinh-nghiem .experience-software-icon {
+			display: flex;
+			width: 64px;
+			aspect-ratio: 1 / 1;
+			min-width: 0;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 4px;
+			padding: 4px;
+			border-radius: 6px;
+			background: var(--white);
+			color: var(--ink);
+			font-size: 12px;
+			text-align: center;
+		}
+
+		#kinh-nghiem .experience-software-icon img {
+			display: block;
+			width: 28px;
+			height: 28px;
+			flex: 0 0 28px;
+			object-fit: contain;
+		}
+
+		#kinh-nghiem .experience-software-icon span {
+			white-space: nowrap;
+		}
+
+		#kinh-nghiem .experience-software-icon:nth-child(4) span {
+			font-size: 11px;
+		}
+
+		#kinh-nghiem .experience-software-tools {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+
+		#kinh-nghiem .experience-software-tool {
+			padding: 5px 10px;
+			border: 1px solid var(--cobalt);
+			background: var(--white);
+			color: var(--ink);
+			font-size: 15px;
+		}
+
+		#kinh-nghiem .experience-education .experience-summary {
+			margin-bottom: 8px;
+		}
+
+		#kinh-nghiem .experience-education .experience-meta {
+			margin: 0;
+		}
+
+		#kinh-nghiem > h4:nth-of-type(1) {
+			grid-area: cadence-title;
+		}
+
+		#kinh-nghiem > .experience-list:nth-of-type(1) {
+			grid-area: cadence;
+		}
+
+		#kinh-nghiem > h4:nth-of-type(2) {
+			grid-area: responsibilities-title;
+		}
+
+		#kinh-nghiem > .experience-list:nth-of-type(2) {
+			grid-area: responsibilities;
+		}
+
+		#kinh-nghiem h4 {
+			margin: 0 0 8px;
+			color: var(--ink);
+			font-family: var(--sans);
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		#kinh-nghiem > .experience-list {
+			margin: 0;
+			padding-left: 22px;
+			font-size: 16px;
+			list-style: disc;
+		}
+
+		#kinh-nghiem > .experience-list li + li {
+			margin-top: 8px;
+		}
+
+		#kinh-nghiem > .experience-list.cadence {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 12px;
+			align-self: start;
+			margin-bottom: 24px;
+			padding: 0;
+			list-style: none;
+		}
+
+		#kinh-nghiem > .experience-list.cadence li {
+			margin: 0;
+			padding: 14px;
+			background: var(--soft-blue);
+		}
+
+		.cadence-value {
+			display: block;
+			color: var(--cobalt);
+			font-size: 25px;
+			font-weight: 600;
+			line-height: 1.25;
+		}
+
+		.cadence-label {
+			display: block;
+			margin-top: 5px;
+			font-size: 13px;
+			line-height: 1.45;
+		}
+
+		#kinh-nghiem .experience-education h4 {
+			margin: 24px 0 8px;
+		}
+
+		#kinh-nghiem .experience-education .experience-summary {
+			margin-top: 0;
+		}
+
+		#lien-he .contact-intro {
+			margin: 16px 0 12px;
+		}
+
+		#lien-he .contact-actions {
+			display: grid;
+			justify-items: start;
+		}
+
+		#lien-he .contact-email {
+			display: inline-flex;
+			min-height: 44px;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 8px;
+			padding: 10px 20px;
+			background: var(--cobalt);
+			color: var(--white);
+			font-family: var(--sans);
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		#lien-he .contact-link {
+			display: flex;
+			min-height: 44px;
+			align-items: center;
+			color: var(--cobalt);
+			font-family: var(--sans);
+		}
+
+		#lien-he .contact-linkedin {
+			min-height: 44px;
+			margin-bottom: 8px;
+		}
+
+		#lien-he .contact-linkedin img {
+			display: block;
+			width: 96px;
+			height: auto;
+		}
+
+		#lien-he .contact-phone {
+			gap: 10px;
+		}
+
+		#lien-he .contact-phone img {
+			display: block;
+			width: 28px;
+			height: 28px;
+		}
+
+		#lien-he .contact-location {
+			margin: 8px 0 0;
+			color: var(--muted);
+		}
+
+		#lien-he .contact-photo {
+			width: min(100%, 260px);
+			margin: 24px auto 0;
+		}
+
+		#lien-he .contact-photo img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		#lien-he .contact-photo figcaption {
+			margin-top: 8px;
+			color: var(--muted);
+			font-size: 13px;
+			text-align: center;
+		}
+
+		@media (min-width: 1000px) {
+			#lien-he {
+				position: relative;
+			}
+
+			#lien-he .contact-photo {
+				position: absolute;
+				top: 0;
+				right: max(32px, calc((100% - 1120px) / 2));
+				bottom: 0;
+				width: auto;
+				margin: 0;
+			}
+
+			#lien-he .contact-photo img {
+				width: auto;
+				max-width: none;
+				height: 100%;
+			}
+
+			#lien-he .contact-photo figcaption {
+				position: absolute;
+				right: 8px;
+				bottom: 8px;
+				margin: 0;
+				padding: 2px 8px;
+				border-radius: 4px;
+				background: rgba(17, 17, 17, 0.6);
+				color: var(--white);
+				font-size: 12px;
+			}
+		}
+
+		.thank-you {
+			display: grid;
+			grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+			gap: 48px;
+			align-items: center;
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 56px 32px;
+		}
+
+		.thank-you-photo {
+			margin: 0;
+		}
+
+		.thank-you-photo img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 12px;
+		}
+
+		.thank-you-photo figcaption {
+			margin-top: 8px;
+			color: var(--muted);
+			font-size: 13px;
+			text-align: center;
+		}
+
+		.thank-quote {
+			min-width: 0;
+		}
+
+		.thank-quote-text {
+			position: relative;
+			margin: 0;
+			padding-left: 48px;
+			color: var(--ink);
+			font-family: var(--serif);
+			font-size: clamp(24px, 2.6vw, 32px);
+			font-style: italic;
+			font-weight: 500;
+			line-height: 1.45;
+		}
+
+		.thank-quote-text::before {
+			content: "\201C";
+			position: absolute;
+			top: -16px;
+			left: 0;
+			color: var(--cobalt);
+			font-size: 90px;
+			font-style: normal;
+			line-height: 1;
+		}
+
+		.thank-quote-sign {
+			margin: 16px 0 0 48px;
+			color: var(--cobalt);
+			font-family: var(--sans);
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		.thank-quote-text::before {
+			--qx: 0;
+		}
+
+		.tq-ready .tq-word,
+		.tq-ready .thank-quote-sign,
+		.tq-ready .thank-quote-text::before {
+			opacity: 0;
+		}
+
+		.tq-on .thank-quote-text::before {
+			animation: tq-pop 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+		}
+
+		.tq-on .tq-word {
+			animation: tq-word 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+			animation-delay: calc(0.3s + var(--i) * 0.07s);
+		}
+
+		.tq-on .thank-quote-sign {
+			animation: tq-word 0.6s ease-out both;
+			animation-delay: var(--sign-delay, 2.3s);
+		}
+
+		.tq-word {
+			display: inline-block;
+			white-space: pre;
+		}
+
+		@keyframes tq-pop {
+			from {
+				opacity: 0;
+				transform: translateX(var(--qx)) scale(0.4) rotate(-12deg);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(var(--qx));
+			}
+		}
+
+		@keyframes tq-word {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+				filter: blur(6px);
+			}
+
+			to {
+				opacity: 1;
+				transform: none;
+				filter: none;
+			}
+		}
+
+		.reveal-ready .reveal {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+
+		.reveal-ready .reveal.is-visible {
+			opacity: 1;
+			transform: none;
+			transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+			transition-delay: var(--d, 0ms);
+		}
+
+		.project-list {
+			display: grid;
+			gap: 24px;
+			margin-top: 28px;
+		}
+
+		.project-card {
+			display: grid;
+			grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+			align-items: start;
+			gap: 24px;
+			min-width: 0;
+			padding: 20px;
+			border: 1px solid #E5EAF2;
+			background: var(--white);
+		}
+
+		.project-image {
+			display: grid;
+			width: 100%;
+			aspect-ratio: 16 / 10;
+			place-items: center;
+			margin: 0;
+			padding: 12px;
+			background: var(--soft-blue);
+			color: var(--muted);
+			text-align: center;
+		}
+
+		.project-shots {
+			display: grid;
+			gap: 8px;
+			width: 100%;
+		}
+
+		.project-shots img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border: 1px solid #E5EAF2;
+		}
+
+		.project-content {
+			min-width: 0;
+		}
+
+		.project-title {
+			margin: 0 0 12px;
+			color: var(--ink);
+			font-size: 23px;
+			font-weight: 600;
+			line-height: 1.4;
+			overflow-wrap: anywhere;
+		}
+
+		.project-primary-stat {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+			gap: 0 5px;
+			margin: 0 0 14px;
+			color: var(--cobalt);
+			line-height: 1.45;
+		}
+
+		.project-primary-value {
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		.project-primary-label {
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		.project-secondary-stats {
+			grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+			margin: 0 0 14px;
+		}
+
+		.project-secondary-stats .hero-stat {
+			padding: 12px;
+		}
+
+		.project-secondary-stats .hero-stat-value {
+			font-size: 21px;
+			overflow-wrap: anywhere;
+		}
+
+		.project-context,
+		.project-role {
+			margin: 0 0 10px;
+			font-size: 15px;
+			color: var(--muted);
+		}
+
+		.project-work {
+			margin: 0 0 14px;
+			padding-left: 22px;
+		}
+
+		.project-work li + li {
+			margin-top: 6px;
+		}
+
+		.project-tools {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 6px;
+			margin: 0 0 12px;
+		}
+
+		.project-tools-label,
+		.project-tool,
+		.project-links a {
+			font-size: 14px;
+		}
+
+		.project-tools-label {
+			font-weight: 600;
+		}
+
+		.project-tool {
+			padding: 3px 7px;
+			background: var(--soft-blue);
+			color: var(--ink);
+		}
+
+		.project-links {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 4px;
+		}
+
+		.project-links a {
+			padding-block: 9px;
+			color: var(--cobalt);
+			overflow-wrap: anywhere;
+		}
+
+		#du-an .project-video-links {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 12px;
+		}
+
+		#du-an .project-video-links a {
+			display: flex;
+			min-width: 0;
+			flex-direction: column;
+			gap: 8px;
+			padding: 0;
+			color: var(--ink);
+			text-decoration: none;
+		}
+
+		#du-an .project-video-links img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 9 / 16;
+			object-fit: cover;
+			border-radius: 6px;
+		}
+
+		#du-an .project-video-links span {
+			color: var(--ink);
+			font-size: 14px;
+			text-decoration: none;
+		}
+
+		#du-an .project-card:nth-child(1) .project-shots .project-video-links {
+			margin-top: 8px;
+		}
+
+		#du-an .project-card:nth-child(3) .project-shots {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		#du-an .project-card:nth-child(3) .project-shots img:first-child {
+			grid-column: 1 / -1;
+		}
+
+		#du-an .project-video-links a {
+			position: relative;
+		}
+
+		#du-an .project-video-links a::after {
+			content: "\25B6";
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			display: grid;
+			box-sizing: border-box;
+			place-items: center;
+			padding-left: 3px;
+			aspect-ratio: 9 / 16;
+			color: var(--white);
+			font-size: 18px;
+			pointer-events: none;
+			background: radial-gradient(circle at center, rgba(17, 17, 17, 0.55) 0 24px, transparent 25px);
+			transition: background 0.2s;
+		}
+
+		#du-an .project-video-links img {
+			transition: transform 0.2s;
+		}
+
+		.project-card {
+			transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+		}
+
+		@media (hover: hover) {
+			#du-an .project-video-links a:hover img {
+				transform: scale(1.03);
+			}
+
+			#du-an .project-video-links a:hover::after {
+				background: radial-gradient(circle at center, var(--cobalt) 0 26px, transparent 27px);
+			}
+
+			.project-card:hover {
+				transform: translateY(-2px);
+				border-color: #B9C8E8;
+				box-shadow: 0 8px 24px rgba(47, 91, 183, 0.12);
+			}
+
+			.hero-action:hover,
+			#lien-he .contact-email:hover {
+				filter: brightness(0.9);
+				text-decoration: none;
+			}
+		}
+
+		#du-an .project-video-links a:focus-visible::after {
+			background: radial-gradient(circle at center, var(--cobalt) 0 26px, transparent 27px);
+		}
+
+		#du-an .project-video-links a:focus-visible {
+			outline: 2px solid var(--cobalt);
+			outline-offset: 2px;
+		}
+
+		.hero-action:focus-visible,
+		#lien-he .contact-email:focus-visible {
+			outline: 2px solid var(--ink);
+			outline-offset: 2px;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html {
+				scroll-behavior: auto;
+			}
+
+			#du-an .project-video-links img,
+			#du-an .project-video-links a::after,
+			.project-card {
+				transition: none;
+			}
+
+			#du-an .project-video-links a:hover img,
+			.project-card:hover {
+				transform: none;
+			}
+
+			.logo-star,
+			.logo::after {
+				animation: none;
+			}
+		}
+
+		@media (max-width: 700px) {
+			html {
+				scroll-padding-top: 112px;
+			}
+
+			.header-inner {
+				width: 100%;
+				min-height: 0;
+				padding: 12px 20px 10px;
+				align-items: flex-start;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.logo {
+				font-size: 25px;
+			}
+
+			.main-nav {
+				width: 100%;
+				justify-content: space-between;
+				gap: 6px;
+				overflow-x: auto;
+				padding-bottom: 2px;
+				scrollbar-width: none;
+			}
+
+			.main-nav::-webkit-scrollbar {
+				display: none;
+			}
+
+			.main-nav a {
+				font-size: 13px;
+			}
+
+			.main-nav a[href="#lien-he"] {
+				padding: 6px 10px;
+			}
+
+			main {
+				padding-top: 100px;
+			}
+
+			.portfolio-section {
+				min-height: 300px;
+				padding: 70px 20px;
+				scroll-margin-top: 100px;
+			}
+
+			.thank-you {
+				grid-template-columns: minmax(0, 1fr);
+				gap: 24px;
+				padding: 40px 20px;
+				text-align: center;
+			}
+
+			.thank-you-photo {
+				max-width: 320px;
+				margin: 0 auto;
+			}
+
+			.thank-quote-text {
+				padding-left: 0;
+				padding-top: 44px;
+			}
+
+			.thank-quote-text::before {
+				top: -8px;
+				left: 50%;
+				transform: translateX(var(--qx));
+				--qx: -50%;
+			}
+
+			.thank-quote-sign {
+				margin-left: 0;
+			}
+
+			.hero-section {
+				grid-template-columns: minmax(0, 1fr);
+				grid-template-areas:
+					"portrait"
+					"eyebrow"
+					"name"
+					"role"
+					"intro"
+					"metrics"
+					"action";
+				gap: 8px;
+				align-content: start;
+				padding: 18px 20px 48px;
+			}
+
+			.hero-portrait {
+				width: min(100%, 360px);
+				max-width: 100%;
+				justify-self: center;
+				align-self: start;
+				margin-bottom: 8px;
+			}
+
+			.hero-name {
+				font-size: 30px;
+			}
+
+			.hero-role {
+				font-size: 20px;
+			}
+
+			.hero-action {
+				margin-top: 4px;
+			}
+
+			.hero-intro {
+				margin-top: 4px;
+			}
+
+			.hero-metrics {
+				margin-top: 8px;
+			}
+
+			.hero-stat {
+				padding: 12px;
+			}
+
+			.hero-stat-value {
+				font-size: 22px;
+			}
+
+			.hero-eyebrow {
+				font-size: 18px;
+			}
+
+			h1,
+			h2 {
+				font-size: 30px;
+			}
+
+			.project-list {
+				gap: 18px;
+				margin-top: 22px;
+			}
+
+			#du-an .project-card:nth-child(3) .project-shots {
+				grid-template-columns: minmax(0, 1fr);
+			}
+
+			.project-card {
+				grid-template-columns: minmax(0, 1fr);
+				gap: 16px;
+				padding: 16px;
+			}
+
+			#kinh-nghiem {
+				grid-template-columns: minmax(0, 1fr);
+				grid-template-areas:
+					"title"
+					"role"
+					"meta"
+					"summary"
+					"cadence-title"
+					"cadence"
+					"responsibilities-title"
+					"responsibilities"
+					"software"
+					"education";
+			}
+
+			#kinh-nghiem > .experience-list.cadence {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.project-title {
+				font-size: 21px;
+			}
+
+			.project-primary-value {
+				font-size: 25px;
+			}
+		}
+
+		@media (max-width: 600px) {
+			#kinh-nghiem .experience-software-icons {
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+
+			#kinh-nghiem .experience-software-icon {
+				width: 100%;
+				font-size: 12px;
+			}
+		}
+
+		.count-up {
+			font-variant-numeric: tabular-nums;
+		}
+
+		.project-primary-value.count-up {
+			display: inline-block;
+		}
+
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="header-inner">
+			<a class="logo" href="#gioi-thieu" aria-label="Portfolio của Phát, đến mục Giới thiệu"><span class="logo-port">Port</span><span class="logo-folio">fol<span class="logo-i">ı<span class="logo-star" aria-hidden="true">✦</span></span>o</span><span class="logo-byline">của Phát</span></a>
+			<nav class="main-nav" aria-label="Điều hướng chính">
+				<a href="#gioi-thieu">Giới thiệu</a>
+				<a href="#du-an">Dự án</a>
+				<a href="#kinh-nghiem">Kinh nghiệm</a>
+				<a href="#lien-he">Liên hệ</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="portfolio-section hero-section" id="gioi-thieu" aria-label="01. Giới thiệu">
+			<p class="hero-eyebrow">1. Giới thiệu</p>
+			<h1 class="hero-name">Hi, em là Tấn Phát, và là</h1>
+			<p class="hero-role" aria-label="Content Creator, AI Video Creator, Short-form Video Editor"><span class="hero-role-item" aria-hidden="true">Content Creator</span><span class="hero-role-item" aria-hidden="true">AI Video Creator</span><span class="hero-role-item" aria-hidden="true">Short-form Video Editor</span></p>
+			<p class="hero-intro">Content Creator có kinh nghiệm sản xuất video triệu view, ứng dụng AI để tối ưu quy trình và SEO website. Em làm nội dung dựa trên số liệu thực tế, hướng tới vị trí Marketing Lead / Manager.</p>
+			<div class="hero-metrics" aria-label="Số liệu nổi bật">
+				<a class="hero-stat hero-stat-link" href="https://www.facebook.com/reel/1673700277001971" target="_blank" rel="noopener noreferrer">
+					<span class="hero-stat-value">1.151.444</span>
+					<span class="hero-stat-label">lượt xem, video cao nhất (Facebook Reels, Meta Business Suite)</span>
+				</a>
+				<div class="hero-stat">
+					<span class="hero-stat-value">~1,4 triệu</span>
+					<span class="hero-stat-label">lượt xem Fanpage trên Meta mỗi tháng </span>
+				</div>
+			</div>
+			<a class="hero-action" href="#du-an">Xem dự án</a>
+			<figure class="hero-portrait">
+				<img class="portrait-base" src="images/hero/portrait-sach.jpg" width="1146" height="912" alt="Nguyễn Tấn Phát ngồi bên laptop, tay chống cằm. Chú thích viết tay: Call me Phat, content creator, 1 year exp.">
+				<img class="ann ann-callme" src="images/hero/ann-callme.png" alt="" aria-hidden="true">
+				<img class="ann arrow ann-arrow-callme" src="images/hero/ann-arrow-callme.png" alt="" aria-hidden="true">
+				<img class="ann ann-content" src="images/hero/ann-content.png" alt="" aria-hidden="true">
+				<img class="ann arrow ann-arrow-content" src="images/hero/ann-arrow-content.png" alt="" aria-hidden="true">
+				<img class="ann ann-year" src="images/hero/ann-year.png" alt="" aria-hidden="true">
+				<img class="ann arrow ann-arrow-year" src="images/hero/ann-arrow-year.png" alt="" aria-hidden="true">
+			</figure>
+		</section>
+
+		<section class="portfolio-section" id="du-an" aria-labelledby="title-du-an">
+			<h2 id="title-du-an">2. Dự án</h2>
+			<div class="project-list">
+				<article class="project-card">
+					<div class="project-shots">
+						<img src="images/du-an-1-video-1151444.jpg" alt="Số liệu Meta Business Suite: video đạt 1.151.444 lượt xem và 412.898 người xem" width="1400" height="573" loading="lazy">
+						<img src="images/du-an-1-video-632971.jpg" alt="Số liệu Meta Business Suite: video Versace VE4361 đạt 632.971 lượt xem và 238.720 người xem" width="1294" height="385" loading="lazy">
+						<img src="images/du-an-1-video-496862.jpg" alt="Số liệu Meta Business Suite: video đạt 496.862 lượt xem và 310.303 người xem" width="1299" height="414" loading="lazy">
+						<div class="project-links project-video-links">
+							<a href="https://www.facebook.com/reel/1673700277001971" target="_blank" rel="noopener noreferrer"><img src="images/video-1.png" alt="Ảnh bìa video 1.151.444 lượt xem" width="180" height="320"><span>1.151.444 lượt xem</span></a>
+							<a href="https://www.facebook.com/reel/1389659455926074" target="_blank" rel="noopener noreferrer"><img src="images/video-2.png" alt="Ảnh bìa video 632.971 lượt xem" width="180" height="320"><span>632.971 lượt xem</span></a>
+							<a href="https://www.facebook.com/reel/27224702717126875" target="_blank" rel="noopener noreferrer"><img src="images/video-3.png" alt="Ảnh bìa video 496.862 lượt xem" width="180" height="320"><span>496.862 lượt xem</span></a>
+						</div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Chuỗi video ngắn viral về mắt kính và thời trang</h3>
+						<p class="project-primary-stat"><strong class="project-primary-value">1.151.444</strong><span class="project-primary-label">· lượt xem, video cao nhất (Facebook Reels)</span></p>
+						<div class="hero-metrics project-secondary-stats" aria-label="Số liệu phụ">
+							<div class="hero-stat"><span class="hero-stat-value">632.971</span><span class="hero-stat-label">lượt xem</span></div>
+							<div class="hero-stat"><span class="hero-stat-value">496.862</span><span class="hero-stat-label">lượt xem</span></div>
+						</div>
+						<p class="project-context">Cần video ngắn ra đều mỗi ngày để nhiều người biết đến thương hiệu và được thuật toán phân phối rộng.</p>
+						<p class="project-role">Vai trò: Content Creator, tự làm toàn bộ quy trình từ ý tưởng đến hậu kỳ.</p>
+						<ul class="project-work">
+							<li>Viết kịch bản theo từng nhóm chủ đề: review sản phẩm, lịch sử thương hiệu xa xỉ (Ray-Ban, Gucci...), cách phối đồ và kiến thức chuyên môn về mắt kính và tròng.</li>
+							<li>Dùng Claude, Gemini và ChatGPT để nghiên cứu chủ đề và viết lời bình cô đọng, giữ nhịp 1 video mỗi ngày.</li>
+							<li>Quay, dựng và làm hậu kỳ bằng CapCut để tối ưu tỷ lệ giữ chân người xem.</li>
+						</ul>
+						<div class="project-tools"><span class="project-tools-label">Công cụ:</span><span class="project-tool">CapCut</span><span class="project-tool">Claude</span><span class="project-tool">Gemini</span><span class="project-tool">ChatGPT</span></div>
+					</div>
+				</article>
+				<article class="project-card">
+					<div class="project-shots">
+						<img src="images/du-an-2-haravan.jpg" alt="Sơ đồ 5 bước đưa sản phẩm lên Haravan: soạn file product.md, code AI viết chuyển sang JSON và gửi kèm token, API nhận yêu cầu, Haravan kiểm tra token, lưu vào database; kèm ví dụ trang sản phẩm gọng kính Giorgio Armani AR7285HU 5879 do Agent tạo" width="1800" height="1426" loading="lazy">
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">AI Agent tự động đăng sản phẩm lên Haravan</h3>
+						<p class="project-primary-stat"><strong class="project-primary-value">20</strong><span class="project-primary-label"> sản phẩm/ngày</span></p>
+						<p class="project-context">Cần đăng 20 sản phẩm mới mỗi ngày kèm mô tả chuẩn SEO, nên cần một quy trình chạy tự động, nhất quán và tiết kiệm thời gian.</p>
+						<p class="project-role">Vai trò: Thiết lập luồng AI Agent và vận hành hằng ngày.</p>
+						<ul class="project-work">
+							<li>Soạn thông tin sản phẩm (tên, giá, thông số, mô tả, ảnh) trong file product.md.</li>
+							<li>Dựng luồng: AI chuyển file sang JSON, gửi lên Haravan API kèm token; Haravan kiểm tra token, lưu sản phẩm vào database và báo thành công.</li>
+							<li>Dùng KiotViet để quản lý tồn kho và xuất hóa đơn, giữ dữ liệu sản phẩm khớp giữa các hệ thống.</li>
+							<li>Rút thời gian đăng 20 sản phẩm mỗi ngày từ khoảng 3 tiếng xuống còn khoảng 1 tiếng, tiết kiệm khoảng 2 tiếng mỗi ngày.</li>
+						</ul>
+						<div class="project-tools"><span class="project-tools-label">Công cụ:</span><span class="project-tool">Haravan API</span><span class="project-tool">Claude</span><span class="project-tool">Gemini</span><span class="project-tool">KiotViet</span></div>
+					</div>
+				</article>
+				<article class="project-card">
+					<div class="project-shots">
+						<img src="images/du-an-3-blog-google.jpg" alt="Kết quả tìm kiếm Google cho &quot;Ray-Ban Aviator Classic Các Bản Biến Thể&quot;, bài viết của kinhrayban.com hiện ở kết quả đầu tiên ngay dưới phần tổng quan do AI tạo" width="1400" height="680" loading="lazy">
+						<img src="images/du-an-3-blog-bai-viet.jpg" alt="Trang bài viết &quot;Ray-Ban Aviator Classic vs. Các Bản Biến Thể: Nên Chọn Truyền Thống Hay Hiện Đại?&quot; trên kinhrayban.com" width="1076" height="864" loading="lazy">
+						<img src="images/du-an-3-blog-trang-chu.jpg" alt="Trang chủ blog kinhrayban.com với banner Ray-Ban &quot;Never Hide&quot; và danh sách bài viết mục Rayban" width="998" height="910" loading="lazy">
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Blog SEO cho kinhrayban.com</h3>
+						<p class="project-primary-stat"><strong class="project-primary-value">1</strong><span class="project-primary-label"> bài blog/ngày</span></p>
+						<p class="project-context">Cần thêm truy cập tự nhiên từ Google và nội dung đủ sâu để người đọc tin tưởng khi chọn mua.</p>
+						<p class="project-role">Vai trò: Nghiên cứu từ khóa, viết và đăng bài.</p>
+						<ul class="project-work">
+							<li>Nghiên cứu từ khóa, tổ chức bài theo mô hình Pillar-Cluster, viết theo E-E-A-T và gắn Schema markup.</li>
+							<li>Dùng Claude và Gemini để tự động hóa khâu viết bài chuẩn SEO, đăng đều 1 bài mỗi ngày.</li>
+							<li>Bài tiêu biểu "Ray-Ban Aviator Classic vs. Các Bản Biến Thể: Nên Chọn Truyền Thống Hay Hiện Đại?" (đăng 01/03/2026, thời gian đọc 8 phút) xuất hiện trên Google với từ khóa "Ray-Ban Aviator Classic Các Bản Biến Thể", hiển thị 4,8 sao.</li>
+						</ul>
+						<div class="project-tools"><span class="project-tools-label">Công cụ:</span><span class="project-tool">WordPress</span><span class="project-tool">Claude</span><span class="project-tool">Gemini</span></div>
+						<div class="project-links"><a href="https://kinhrayban.com/ray-ban-aviator-classic-vs-cac-ban-bien-the-nen-chon-truyen-thong-hay-hien-dai/" target="_blank" rel="noopener noreferrer">Xem bài viết</a></div>
+					</div>
+				</article>
+				<article class="project-card">
+					<div class="project-shots">
+						<img src="images/du-an-4-fanpage.jpg" alt="Tổng quan nội dung Meta Business Suite tháng 7: 1,4 triệu lượt xem, 299,4K lượt xem tối thiểu 3 giây, 6,9K lượt tương tác, 761.859 người xem" width="1198" height="645" loading="lazy">
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Phát triển nội dung Fanpage Mắt Kính Liên Sơn</h3>
+						<p class="project-primary-stat"><strong class="project-primary-value">1.376.299</strong><span class="project-primary-label"> lượt xem (~1,4 triệu) trong tháng 7/2026</span></p>
+						<div class="hero-metrics project-secondary-stats" aria-label="Số liệu phụ">
+							<div class="hero-stat"><span class="hero-stat-value">761.859</span><span class="hero-stat-label">người xem</span></div>
+							<div class="hero-stat"><span class="hero-stat-value">299,4K</span><span class="hero-stat-label">lượt xem từ 3 giây trở lên</span></div>
+							<div class="hero-stat"><span class="hero-stat-value">6,9K</span><span class="hero-stat-label">lượt tương tác với nội dung</span></div>
+						</div>
+						<p class="project-context">Cần giữ lượng xem cao và đều cho Fanpage, đồng thời dẫn người xem sang mua hàng.</p>
+						<p class="project-role">Vai trò: Viết bài, làm hình ảnh và video cho Fanpage.</p>
+						<ul class="project-work">
+							<li>Đăng 1 bài chuẩn SEO mỗi ngày, kèm hình ảnh hoặc video.</li>
+							<li>Thiết kế hình ảnh bằng Photoshop, dựng video bằng CapCut.</li>
+							<li>Theo dõi thuật toán và điều chỉnh nội dung theo hiệu quả.</li>
+						</ul>
+						<div class="project-tools"><span class="project-tools-label">Công cụ:</span><span class="project-tool">Photoshop</span><span class="project-tool">CapCut</span><span class="project-tool">Meta Business Suite</span></div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="portfolio-section" id="kinh-nghiem" aria-labelledby="title-kinh-nghiem">
+			<h2 id="title-kinh-nghiem">3. Kinh nghiệm</h2>
+			<h3>Content Creator</h3>
+			<p class="experience-meta">Mắt Kính Liên Sơn · 06/2025 – 07/2026</p>
+			<p class="experience-summary">Phụ trách sản xuất nội dung đa nền tảng và vận hành hệ thống website thương hiệu.</p>
+			<h4>Nhịp độ đã duy trì</h4>
+			<ul class="experience-list cadence">
+				<li><span class="cadence-value">1</span><span class="cadence-label">video/ngày</span></li>
+				<li><span class="cadence-value">1</span><span class="cadence-label">bài blog/ngày</span></li>
+				<li><span class="cadence-value">1</span><span class="cadence-label">bài Fanpage/ngày</span></li>
+				<li><span class="cadence-value">20</span><span class="cadence-label">sản phẩm/ngày</span></li>
+			</ul>
+			<h4>Mảng phụ trách</h4>
+			<ul class="experience-list">
+				<li>Video ngắn (Reels, TikTok, YouTube Shorts)</li>
+				<li>Blog SEO/GEO trên WordPress</li>
+				<li>Fanpage và Instagram thương hiệu</li>
+				<li>AI Agent đăng sản phẩm lên Haravan</li>
+				<li>Quản lý tồn kho và hóa đơn điện tử bằng KiotViet</li>
+			</ul>
+			<div class="experience-software">
+				<h4>Kỹ năng phần mềm</h4>
+				<div class="experience-software-icons">
+					<div class="experience-software-icon"><img src="images/icon-claude.png" alt="" width="32" height="32"><span>Claude</span></div>
+					<div class="experience-software-icon"><img src="images/icon-chatgpt.png" alt="" width="32" height="32"><span>ChatGPT</span></div>
+					<div class="experience-software-icon"><img src="images/icon-gemini.webp" alt="" width="32" height="32"><span>Gemini</span></div>
+					<div class="experience-software-icon"><img src="images/icon-antigravity.png" alt="" width="32" height="32"><span>Antigravity</span></div>
+					<div class="experience-software-icon"><img src="images/icon-capcut.png" alt="" width="32" height="32"><span>CapCut</span></div>
+					<div class="experience-software-icon"><img src="images/icon-photoshop.png" alt="" width="32" height="32"><span>Photoshop</span></div>
+				</div>
+				<div class="experience-software-tools">
+					<span class="experience-software-tool">Flow</span>
+					<span class="experience-software-tool">AI Agent</span>
+					<span class="experience-software-tool">WordPress</span>
+					<span class="experience-software-tool">Vibe coding</span>
+					<span class="experience-software-tool">Google Analytics 4</span>
+				</div>
+			</div>
+			<div class="experience-education">
+				<h4>Học vấn</h4>
+				<p class="experience-summary">Cử nhân Ngôn ngữ Anh, Trường Đại học Tài chính - Marketing (2021 – 2025)</p>
+				<p class="experience-meta">Tiếng Anh: IELTS 6.0</p>
+				<p class="experience-meta">Tin học văn phòng: MOS Excel, Word</p>
+			</div>
+		</section>
+
+		<section class="portfolio-section" id="lien-he" aria-labelledby="title-lien-he">
+			<h2 id="title-lien-he">4. Liên hệ</h2>
+			<p class="contact-intro">Hy vọng có cơ hội được kết nối ạ!</p>
+			<div class="contact-actions">
+				<a class="contact-email" href="mailto:ntphat.170303@gmail.com">Gửi email cho em</a>
+				<a class="contact-link contact-linkedin" href="https://www.linkedin.com/in/ph%C3%A1t-nguy%E1%BB%85n-5b352631a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn của Phát"><img src="images/logo-linkedin.png" alt="LinkedIn" width="96" height="24"></a>
+				<a class="contact-link contact-phone" href="tel:+84855809936" aria-label="Gọi điện thoại 0855.809.936"><img src="images/icon-phone.png" alt="" width="28" height="28"><span>0855.809.936</span></a>
+			</div>
+			<p class="contact-location">Phường Bình Thới, TP. Hồ Chí Minh</p>
+			<figure class="contact-photo">
+				<img src="images/lien-he-anh.png" alt="Ảnh Nguyễn Tấn Phát trong bộ đồ đua xe" width="484" height="516" loading="lazy">
+
+			</figure>
+		</section>
+
+		<section class="thank-you" aria-label="Lời cảm ơn">
+			<figure class="thank-you-photo">
+				<img src="images/cam-on.png" alt="Ảnh chân dung Nguyễn Tấn Phát dạng bìa tạp chí, do AI tạo" width="548" height="706" loading="lazy">
+			
+			</figure>
+			<div class="thank-quote">
+				<p class="thank-quote-text">Cảm ơn anh/chị đã dành thời gian xem trang của em. Em rất mong sớm có cơ hội được trao đổi thêm ạ!</p>
+				<p class="thank-quote-sign">— Nguyễn Tấn Phát</p>
+			</div>
+		</section>
+	</main>
+	<script>
+	(function () {
+		try {
+			var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			if (reduce || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
+
+			function format(value, decimals) {
+				var fixed = value.toFixed(decimals);
+				var parts = fixed.split('.');
+				var int = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+				return decimals ? int + ',' + parts[1] : int;
+			}
+
+			var items = [];
+			document.querySelectorAll('.hero-stat-value, .project-primary-value').forEach(function (el) {
+				var text = el.textContent.trim();
+				var m = text.match(/^(~?)(\d{1,3}(?:\.\d{3})*|\d+)(?:,(\d+))?(.*)$/);
+				if (!m) return;
+				var decimals = m[3] ? m[3].length : 0;
+				var target = parseFloat(m[2].replace(/\./g, '') + (m[3] ? '.' + m[3] : ''));
+				if (!decimals && target < 100) return;
+				items.push({ el: el, text: text, prefix: m[1], suffix: m[4], decimals: decimals, target: target });
+			});
+			if (!items.length) return;
+
+			items.forEach(function (item) {
+				var el = item.el;
+				var sr = document.createElement('span');
+				sr.className = 'sr-only';
+				sr.textContent = item.text;
+				el.parentNode.insertBefore(sr, el.nextSibling);
+				el.setAttribute('aria-hidden', 'true');
+				el.classList.add('count-up');
+				el.style.minWidth = el.getBoundingClientRect().width + 'px';
+				el.textContent = item.prefix + format(0, item.decimals) + item.suffix;
+			});
+
+			function run(item) {
+				var el = item.el;
+				var inHero = !!el.closest('.hero-section');
+				var start = null;
+				var duration = 1200;
+				function frame(now) {
+					if (start === null) start = now;
+					var t = Math.min((now - start) / duration, 1);
+					var eased = 1 - Math.pow(1 - t, 3);
+					if (t < 1) {
+						el.textContent = item.prefix + format(item.target * eased, item.decimals) + item.suffix;
+						requestAnimationFrame(frame);
+					} else {
+						el.textContent = item.text;
+					}
+				}
+				setTimeout(function () { requestAnimationFrame(frame); }, inHero ? 600 : 0);
+			}
+
+			var io = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					io.unobserve(entry.target);
+					items.forEach(function (item) { if (item.el === entry.target) run(item); });
+				});
+			}, { threshold: 0.6 });
+			items.forEach(function (item) { io.observe(item.el); });
+		} catch (e) {
+			document.querySelectorAll('.count-up').forEach(function (el) {
+				var sr = el.nextElementSibling;
+				if (sr && sr.classList.contains('sr-only')) el.textContent = sr.textContent;
+			});
+		}
+	})();
+	(function () {
+		if (!('IntersectionObserver' in window)) return;
+		var links = [].slice.call(document.querySelectorAll('.main-nav a[href^="#"]'));
+		var map = {};
+		var sections = [];
+		links.forEach(function (a) {
+			var s = document.querySelector(a.getAttribute('href'));
+			if (s) {
+				map[s.id] = a;
+				sections.push(s);
+			}
+		});
+		if (!sections.length) return;
+
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (e) {
+				if (!e.isIntersecting) return;
+				links.forEach(function (a) {
+					var on = a === map[e.target.id];
+					a.classList.toggle('is-current', on);
+					if (on) a.setAttribute('aria-current', 'true');
+					else a.removeAttribute('aria-current');
+				});
+			});
+		}, { rootMargin: '-40% 0px -55% 0px' });
+
+		sections.forEach(function (s) { io.observe(s); });
+	})();
+	(function () {
+		var quote = document.querySelector('.thank-quote');
+		if (!quote) return;
+		var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (reduce || !('IntersectionObserver' in window)) return;
+
+		var textEl = quote.querySelector('.thank-quote-text');
+		if (!textEl) return;
+		var full = textEl.textContent;
+		var count = 0;
+		textEl.setAttribute('aria-label', full);
+		textEl.textContent = '';
+		full.split(/(\s+)/).forEach(function (part) {
+			if (!part) return;
+			var span = document.createElement('span');
+			span.setAttribute('aria-hidden', 'true');
+			if (part.trim()) {
+				span.className = 'tq-word';
+				span.style.setProperty('--i', count);
+				count += 1;
+			} else {
+				span.style.whiteSpace = 'pre';
+			}
+			span.textContent = part;
+			textEl.appendChild(span);
+		});
+		quote.style.setProperty('--sign-delay', (0.3 + count * 0.07 + 0.3).toFixed(2) + 's');
+		quote.classList.add('tq-ready');
+
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (e) {
+				if (!e.isIntersecting) return;
+				quote.classList.add('tq-on');
+				io.disconnect();
+			});
+		}, { threshold: 0.4 });
+		io.observe(quote);
+
+		setTimeout(function () {
+			quote.classList.add('tq-on');
+		}, 8000);
+	})();
+	(function () {
+		var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (reduce || !('IntersectionObserver' in window)) return;
+
+		var els = [].slice.call(document.querySelectorAll('#kinh-nghiem > *, #lien-he > *:not(.contact-photo)'));
+		if (!els.length) return;
+
+		els.forEach(function (el, i) {
+			el.classList.add('reveal');
+			el.style.setProperty('--d', (i % 4) * 60 + 'ms');
+			if (el.getBoundingClientRect().bottom < 0) el.classList.add('is-visible');
+		});
+		document.documentElement.classList.add('reveal-ready');
+
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (e) {
+				if (!e.isIntersecting) return;
+				e.target.classList.add('is-visible');
+				io.unobserve(e.target);
+			});
+		}, { threshold: 0.15 });
+		els.forEach(function (el) { io.observe(el); });
+
+		setTimeout(function () {
+			els.forEach(function (el) {
+				var r = el.getBoundingClientRect();
+				if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
+			});
+		}, 3000);
+	})();
+	</script>
+</body>
+</html>
